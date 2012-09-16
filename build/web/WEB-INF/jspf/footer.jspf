@@ -1,0 +1,11 @@
+<%
+    if (session.getAttribute("mensaje") != null && session.getAttribute("mensaje") != "Ok"){
+        String mensaje = session.getAttribute("mensaje").toString();
+        out.print("<script language='JavaScript' type='text/javascript'>alert('"+mensaje+"')</script>");
+        session.removeAttribute("mensaje");
+    }
+    bd.desconectar();
+%>
+</div>
+</body>
+</html>

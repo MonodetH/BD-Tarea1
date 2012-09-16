@@ -1,0 +1,12 @@
+<form method="POST" action="registro">
+    <input type="email" name="email" placeholder="email@example.com" value="" required />
+    <input type="text" name="nick" placeholder="Pseudonimo" value="" required /><br>
+    <input type="password" name="pass" placeholder="Password" value="" required />
+    <input type="password" name="pass2" placeholder="Repita Password" value="" required /><br> 
+    <h4 style="display: inline; margin-right: 20%">Tipo:</h4>
+    <input type="radio" id="radioHeroe" name="tipo" value="Heroe"  style="width: auto;" checked />
+    <label for="radioHeroe"  style='display: inline;'>Heroe</label>
+    <input type="radio" id="radioVillano" name="tipo" value="Villano"  style="width: auto;"/>
+    <label for="radioVillano" style="display: inline;">Villano</label><br />
+    <input type="submit" name="submitted" value="Registrar" style="width: 100%;height: 30px;">
+</form>

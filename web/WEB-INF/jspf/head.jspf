@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="STYLESHEET" type="text/css" href="/Tarea1/main_css.css">
+        <title>Villa Villana</title>
+    </head>
+    <body>
+        <div>
+<header>
+    <div style="width: 100%;">
+    <div id="logo"><h1>Villa Villana</h1></div>
+    
+<% 
+  if (session.getAttribute("user_id") != null){
+    out.println("<div id='logout'>");
+    out.println("<a href='/Tarea1/Paginas/p_usuario.jsp' style='display: inline'>"+session.getAttribute("nick")+"</a>");
+%>
+<form action="../logout" method="POST" style="display: inline">
+    <input type="submit" name="Logout" value="Salir">
+</form>
+<%
+    out.println("</div>");
+  }
+%>  
+    </div>
+</header>

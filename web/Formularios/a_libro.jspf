@@ -1,0 +1,9 @@
+<form action="/Cuebook/agr_libro" method="POST">
+    <input type="text" name="titulo" placeholder="Titulo" value="" required /><br>
+    <input type="text" name="autor" placeholder="Autor" value="" required />
+    <input type="text" name="ano" placeholder="Año" value="" required /><br>
+    <input type="text" name="personajes" placeholder="Personajes" value="" required />
+    <input type="text" name="resena" placeholder="Reseña" value="" required /><br>
+    <input type="text" name="url_img" placeholder="URL imagen" value="" required /><br>
+    <input type="submit" name="submitted" value="Agregar" style="width: 100%;height: 30px;">
+</form>

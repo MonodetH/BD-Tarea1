@@ -1,0 +1,49 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="Clases.BD"%>
+<h2>Nueva Batalla</h2>
+<form method="POST" action="/Tarea1/nuevaBatalla">
+    <input type="text" name="nombre" placeholder="Nombre de Batalla" value="" maxlength="20" required /><br/>    
+<%  
+    ResultSet rs = null;
+    if(bd.isVillano(sesion.getAttribute("user_id").toString())){ 
+%>
+    Guerrero: 
+    <select name="id_villano">
+<%  
+    rs = bd.getGuerreros(sesion.getAttribute("user_id").toString());
+    while(rs.next()){
+        if(bd.sinBatalla(rs.getString("id_guerrero"))){
+            out.println("<option value='"+rs.getString("id_guerrero")+"'>"+rs.getString("nombre")+"</option>");
+        }
+    }
+%>
+    </select><br/>
+    Contrincante (Maestro-Guerrero): 
+    <select name="id_heroe">
+<%  }else{ %>
+    Guerrero: 
+    <select name="id_heroe">
+<%  
+    rs = bd.getGuerreros(sesion.getAttribute("user_id").toString());
+    while(rs.next()){
+        if(bd.sinBatalla(rs.getString("id_guerrero"))){
+            out.println("<option value='"+rs.getString("id_guerrero")+"'>"+rs.getString("nombre")+"</option>");
+        }
+    }
+%>
+    </select><br/>
+    Contrincante (Maestro-Guerrero): 
+    <select name="id_villano">
+<%  } %>
+
+<%
+    rs = bd.getEnemigos(bd.isVillano(sesion.getAttribute("user_id").toString()));
+    while(rs.next()){
+        if(bd.sinBatalla(rs.getString("id"))){
+            out.println("<option value='"+rs.getString("id")+"'>"+rs.getString("maestro")+" - "+rs.getString("guerrero")+"</option>");
+        }
+    }
+%>
+    </select><br/>
+    <input type="submit" value="Crear" />
+</form>

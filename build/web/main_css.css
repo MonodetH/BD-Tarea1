@@ -1,0 +1,113 @@
+
+/* BASICOS */
+*{
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+}
+html,body{
+    min-height: 100%;
+    font-size: 15px;
+    /* font-family: tahoma, verdana, arial, sans-serif; */
+}
+body{
+    word-spacing: normal;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #202020;
+    width: 1024px;
+    margin: auto;
+}
+div{
+    /*border-style: dotted;*/
+    display: table;
+    margin: 0;
+}
+
+/* COMUNES */
+header{
+    width: 1024px;
+    margin: 10px auto auto auto;
+    border-bottom-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    background: #fff;
+    text-align: right;
+}
+#logo{
+    margin-left: 15px;
+    float: left;
+}
+#logout{
+    display: inline-block;
+    text-align: right;
+    margin: 7px 5px;
+}
+#contenido{
+    float: right;
+    width: 77%;
+    height: 100%;
+    margin: 10px auto ;
+}
+aside{
+    background-color: white;
+    float: left;
+    width: 21%;
+    height: 85%;
+    margin: 10px auto ;
+    padding: 10px;
+}
+
+/* PAGINAS */
+
+/* inicio */
+#login-reg{
+    border-radius: 14px;
+    margin: auto auto;
+    padding: 15px;
+    width: 400px;
+    background: #EEE;
+    z-index:1002;
+    overflow: auto;
+}
+#login_bg{
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+}
+#login{
+    width: 100%;
+}
+#reg_switch{
+    margin: 5px auto;
+}
+#registro{
+    margin-top: 5px;
+    display: none;
+}
+#registro input{
+    width: 48%;
+    margin-bottom: 5px;
+}
+#inicio p{
+    text-align: center;
+}
+#ingreso{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 40px;
+}
+#vista_inicio{
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    margin-top: 10px;
+}
+

@@ -1,0 +1,35 @@
+<% 
+    boolean esVillano = bd.isVillano(sesion.getAttribute("user_id").toString()); 
+%>
+<h2>Nuevo Guerrero</h2>
+<form method="POST" action="/Tarea1/agregarGuerrero" >
+    <input type="hidden" name="user_id" value="<% out.print(sesion.getAttribute("user_id").toString()); %>" />
+    Nombre: <input type="text" name="nombre" placeholder="Nombre" value="" required /><br>
+    Avatar: <br/>
+<% if(esVillano){ %>
+<div class="img_url">
+    <img src="/Tarea1/Images/villano_h.jpg" /><br/>
+    <input type="radio" name="img_url" value="/Tarea1/Images/villano_h.jpg" checked />
+</div>
+<div class="img_url">
+    <img src="/Tarea1/Images/villano_m.jpg" /><br/>
+    <input type="radio" name="img_url" value="/Tarea1/Images/villano_m.jpg" />
+</div>
+<% }else{ %>
+<div class="img_url">
+    <img src="/Tarea1/Images/heroe_h.jpg" /><br/>
+    <input type="radio" name="img_url" value="/Tarea1/Images/heroe_h.jpg" checked />
+</div>
+<div class="img_url">
+    <img src="/Tarea1/Images/heroe_m.jpg" /><br/>
+    <input type="radio" name="img_url" value="/Tarea1/Images/heroe_m.jpg" />
+</div>
+<% } %>
+    Tipo de Guerrero*:<br/>
+    <input type="radio" name="tipo_primer" value="fuerte" checked />Guerrero Fuerte
+    <input type="radio" name="tipo_primer" value="agil" />Guerrero Ágil<br/>
+    <input type="submit" value="Crear" /><br/>
+    
+    * Guerrero Fuerte: PtsVida: 4, "AtaqueF" con PtsFuerza: 2, "DefensaF" con PtsFuerza: 5<br/>
+    * Guerrero Ágil: PtsVida: 3, "AtaqueA" con PtsFuerza: 5, "DefensaA" con PtsFuerza: 2
+</form>

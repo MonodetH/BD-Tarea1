@@ -1,0 +1,10 @@
+<form action="" method="POST">
+    <input type="text" name="libro" placeholder="Basado en el libro" value="" required /><br>
+    <input type="text" name="nombre" placeholder="Nombre" value="" required /><br>
+    <input type="text" name="dur" placeholder="Duracion" value="" required /><br>
+    <input type="text" name="resena" placeholder="Resena" value="" required /><br>
+    <input type="text" name="guest" placeholder="Actores invitado" value="" required /><br>
+
+    
+    <input type="submit" name="submitted" value="Agregar" style="width: 100%;height: 30px;">
+</form>

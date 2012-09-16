@@ -1,0 +1,10 @@
+<aside>
+    <ul>
+        <li><h2>Menu</h2></li>
+        <li><a href="/Tarea1/Paginas/p_usuario.jsp">Perfil Maestro</a></li>
+        <li><a href="/Tarea1/Paginas/guerreros.jsp">Guerreros</a></li>
+        <li><a href="/Tarea1/Paginas/add_guerrero.jsp">Crear Guerrero</a></li>
+        <li><a href="/Tarea1/Paginas/add_habilidad.jsp">Agregar Habilidad</a></li>
+        <li><a href="/Tarea1/Paginas/batallas.jsp">Batallas</a></li>
+    </ul>
+</aside>
