@@ -30,7 +30,7 @@ header{
     margin: 10px auto auto auto;
     border-bottom-right-radius: 14px;
     border-bottom-left-radius: 14px;
-    background: #fff;
+    background: #fafafa;
     text-align: right;
 }
 #logo{
@@ -47,9 +47,11 @@ header{
     width: 77%;
     height: 100%;
     margin: 10px auto ;
+    background-color: #cacaca;
+    padding: 5px 25px;
 }
 aside{
-    background-color: white;
+    background-color: #fafafa;
     float: left;
     width: 21%;
     height: 85%;
@@ -109,5 +111,15 @@ aside{
     text-align: center;
     background-color: #fff;
     margin-top: 10px;
+    padding: 10px;
 }
-
+#topten{
+    margin: 10px auto 2px auto;
+}
+#guerreros, #guerrerosPlus, .formulario, #vs{
+    width: 100%;
+}
+.guerrero, .guerreroPlus, .img_url, #guerreros a, .avatar, #versus{
+    display: table-cell;
+    padding: 5px;
+}

@@ -3,6 +3,6 @@
     <input type="hidden" name="id_guerrero" value="<% out.print(request.getParameter("id_guerrero")); %>" />
     <input type="text" name="nombre" placeholder="Nombre de Habilidad" value="" required /><br/>
     <input type="radio" name="tipo" value="1" checked />Ataque (2 PtsFuerza)
-    <input type="radio" name="tipo" value="2" />Defenza (1 PtsFuerza)<br/>
+    <input type="radio" name="tipo" value="2" />Defensa (1 PtsFuerza)<br/>
     <input type="submit" value="Crear" />
 </form>

@@ -6,5 +6,6 @@
         <li><a href="/Tarea1/Paginas/add_guerrero.jsp">Crear Guerrero</a></li>
         <li><a href="/Tarea1/Paginas/add_habilidad.jsp">Agregar Habilidad</a></li>
         <li><a href="/Tarea1/Paginas/batallas.jsp">Batallas</a></li>
+        <li><a href="/Tarea1/Paginas/victoria.jsp">Cobrar Pts Victoria</a></li>
     </ul>
 </aside>

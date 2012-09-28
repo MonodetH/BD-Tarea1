@@ -57,7 +57,7 @@ public class agregarGuerrero extends HttpServlet {
                 rs.next();
                 String guerrero_id = rs.getString("id_guerrero");
                 bd.regHabilidad(guerrero_id, "AtaqueF", "2", "1");
-                bd.regHabilidad(guerrero_id, "DefenzaF", "5", "2");
+                bd.regHabilidad(guerrero_id, "DefensaF", "5", "2");
                 
                 response.sendRedirect("/Tarea1/Paginas/p_usuario.jsp");
             }else if(tipo_primer.compareTo("agil") == 0){
@@ -66,7 +66,7 @@ public class agregarGuerrero extends HttpServlet {
                 rs.next();
                 String guerrero_id = rs.getString("id_guerrero");
                 bd.regHabilidad(guerrero_id, "AtaqueA", "5", "1");
-                bd.regHabilidad(guerrero_id, "DefenzaA", "2", "2");
+                bd.regHabilidad(guerrero_id, "DefensaA", "2", "2");
                 
                 response.sendRedirect("/Tarea1/Paginas/p_usuario.jsp");
             }

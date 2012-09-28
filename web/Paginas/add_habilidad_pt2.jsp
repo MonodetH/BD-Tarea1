@@ -10,7 +10,7 @@
 %>
 <%@include file="/WEB-INF/jspf/head.jspf" %>
 <%@include file="/WEB-INF/jspf/sidebar.jspf" %>
-<% ResultSet rs = bd.rawQuery("select id_guerrero, nombre, url_foto from guerrero where id_maestro = '"+session.getAttribute("user_id") +"'"); %>
+<% ResultSet rs = bd.rawQuery("select id_guerrero, nombre, url_foto from guerrero where id_maestro = '"+session.getAttribute("user_id") +"' and ptsvida>0"); %>
 
 <div id="contenido">
     <div class="formulario">

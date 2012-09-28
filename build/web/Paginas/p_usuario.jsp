@@ -26,11 +26,11 @@
     </div>
         <div id="W-L">
             
-            <h1><span><% out.print( rs.getInt("BATALLASGANADAS")); %></span> - 
-                <span><% out.print( rs.getInt("BATALLASPERDIDAS")); %></span></h1>
+            <h1><span style="color: #0FC000"><% out.print( rs.getInt("BATALLASGANADAS")); %></span> - 
+                <span style="color: red"><% out.print( rs.getInt("BATALLASPERDIDAS")); %></span></h1>
         </div>
 <%
-    rs = bd.rawQuery("select id_guerrero, nombre, url_foto from guerrero where id_maestro = '"+session.getAttribute("user_id") +"'");
+    rs = bd.rawQuery("select id_guerrero, nombre, url_foto from guerrero where id_maestro = '"+session.getAttribute("user_id") +"' and ptsvida>0");
 %>
     
 <hr>
@@ -46,6 +46,7 @@ while(rs.next()){
     </div>
     <hr>
     <div id="contrincantes">
+    <h3>Contrincantes</h3>
 <%
     rs = bd.getContrincantes(session.getAttribute("user_id").toString());
     while(rs.next()){

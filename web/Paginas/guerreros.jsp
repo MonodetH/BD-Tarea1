@@ -24,7 +24,7 @@ while(rs1.next()){
     out.println("<div class='habilidades'>");
     while(rs2.next()){
         String tipo = null;
-        if(rs2.getString("tipo").compareTo("1") == 0){tipo = "Ataque";}else{tipo = "Defenza";}
+        if(rs2.getString("tipo").compareTo("1") == 0){tipo = "Ataque";}else{tipo = "Defensa";}
         out.println(rs2.getString("nombre")+" - "+tipo+" - "+rs2.getString("ptsfuerza")+" Puntos de Fuerza<br/>");
     }
     out.println("</div>");

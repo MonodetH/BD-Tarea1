@@ -15,7 +15,7 @@
 %>
 
 <%@include file="WEB-INF/jspf/head.jspf" %>
-<div id="contenido" style="width: 100%">
+<div id="contenido" style="width: 100%; background-color: transparent;">
     <div id="login-reg">
         <div id="login" style="text-align: center;">
             <h3 style="text-align: center;">Login</h3>
@@ -39,7 +39,28 @@
         </div>
     </div>
     <div id="vista_inicio">
-        Aqui la vista
+        <h2>
+<%
+    int domina = bd.domina();
+    if(domina == 1){
+        out.print("Los heroes mantenemos a salvo esta cuidad");
+    }else if(domina == -1){
+        out.print("Los villanos dominamos la cuidad");
+    }else{
+        out.print("Las batallas no han dado tregua alguna");
+    }
+%>
+        </h2>
+        <div id="topten">
+            <hr/>
+            <h2>TopTen</h2>
+<%
+    ResultSet rs = bd.topTen();
+    while(rs.next()){
+        out.println("<h4>"+rs.getString("pseudonimo")+" - "+rs.getString("batallasganadas")+"Victorias</h4>");
+    }
+%>
+        </div>
     </div>
 </div>      
 <%@include file="WEB-INF/jspf/footer.jspf" %>

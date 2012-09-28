@@ -1,0 +1,18 @@
+
+<form method="POST" action="/Tarea1/defender">
+    <input type="hidden" name="esVillano" value="<% out.print(esVillano); %>"/>
+    <input type="hidden" name="id_round" value="<% out.print(round.getString("id_round")); %>"/>
+    <input type="hidden" name="id_batalla" value="<% out.print(batalla.getString("id_batalla")); %>"/>
+    Habilidad: 
+    <select name="hab">
+<%
+    ResultSet habs = bd.getHabilidades(id_guerrero);
+    while(habs.next()){
+        if(habs.getInt("tipo") == 2){
+            out.println("<option value='"+habs.getString("id_habilidad")+"'>"+habs.getString("nombre")+" - "+habs.getString("ptsfuerza")+" PtsFuerza</option>");
+        }
+    }
+%>
+    </select>
+    <input type="submit" value="Defender" />
+</form>

@@ -12,15 +12,16 @@
 <%@include file="/WEB-INF/jspf/head.jspf" %>
 <%@include file="/WEB-INF/jspf/sidebar.jspf" %>
 <div id="contenido">
-    <a href="/Tarea1/Paginas/nueva_batalla.jsp">Iniciar Reto</a>
+    <a href="/Tarea1/Paginas/nueva_batalla.jsp"><h3>Iniciar Reto</h3></a>
     <hr>
     <div id="batallasActuales">
+    <h2>Batallas actuales</h2>
 <% 
     ResultSet rs = bd.batallasActuales(sesion.getAttribute("user_id").toString()); 
     while(rs.next()){
 %>        
         <div class="batAct">
-            <%  out.println("<a href='/Tarea1/Paginas/batalla.jsp?id="+rs.getString("id_batalla") +"'>"+rs.getString("nombreBatalla")+"</a>"); %>      
+            <%  out.println("<a href='/Tarea1/Paginas/batalla.jsp?id="+rs.getString("id_batalla") +"'><h3>"+rs.getString("nombreBatalla")+"</h3></a><br/>"); %>      
         </div>
 <%  } %>
     </div>

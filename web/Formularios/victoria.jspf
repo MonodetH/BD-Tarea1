@@ -1,0 +1,30 @@
+<form method="POST" action="/Tarea1/premiar">
+    Vida +1 para: 
+    <select name="vida">
+<%
+    ResultSet rs = bd.rawQuery("select * from guerrero where ptsVida <10 and ptsvida >0 and id_maestro="+sesion.getAttribute("user_id").toString());
+    while(rs.next()){
+        out.println("<option value='"+rs.getString("id_guerrero")+"'>"+rs.getString("nombre")+"</option>");
+    }
+%>        
+    </select><br/>
+    Ataque +1 para: 
+    <select name="ataque">
+<%
+    rs = bd.todosAtaques(sesion.getAttribute("user_id").toString());
+    while(rs.next()){
+        out.println("<option value='"+rs.getString("id")+"'>"+rs.getString("g_nombre")+" - "+rs.getString("h_nombre")+"</option>");
+    }
+%>        
+    </select><br/>
+    Defensa +1 para: 
+    <select name="defensa">
+<%
+    rs = bd.todasDefensas(sesion.getAttribute("user_id").toString());
+    while(rs.next()){
+        out.println("<option value='"+rs.getString("id")+"'>"+rs.getString("g_nombre")+" - "+rs.getString("h_nombre")+"</option>");
+    }
+%>        
+    </select><br/>
+    <input type="submit" value="Asignar puntos" />
+</form>

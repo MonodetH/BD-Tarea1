@@ -15,17 +15,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(name = "nuevaBatalla", urlPatterns = {"/nuevaBatalla"})
-public class nuevaBatalla extends HttpServlet {
+@WebServlet(name = "premiar", urlPatterns = {"/premiar"})
+public class premiar extends HttpServlet {
 
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.sendRedirect("index.jsp");
     }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -33,23 +31,30 @@ public class nuevaBatalla extends HttpServlet {
             HttpSession mensaje = request.getSession(true);
             PrintWriter out = response.getWriter();
             //Declaro variables
-            String nombre = request.getParameter("nombre");
-            String id_villano = request.getParameter("id_villano");
-            String id_heroe = request.getParameter("id_heroe");
+            String vida = request.getParameter("vida");
+            String ataque = request.getParameter("ataque");
+            String defensa = request.getParameter("defensa");
             
-            int id_batalla;
             BD bd = new BD();
             bd.conectar();
             
-            id_batalla = bd.nuevaBatalla(nombre, id_villano, id_heroe);            
-            bd.nuevoRound(String.valueOf(id_batalla), id_villano, null, null, String.valueOf(1), bd.getVida(id_heroe), bd.getVida(id_villano));
+            ResultSet rs = bd.rawQuery("select * from maestro where premiosrestantes=0 and id_maestro="+mensaje.getAttribute("user_id").toString());
+            if(rs.next()){
+                mensaje.setAttribute("mensaje", "No hay premios que cobrar");
+                response.sendRedirect("/Tarea1/Paginas/p_usuario.jsp");
+                return;
+            }
             
-            response.sendRedirect("/Tarea1/Paginas/batalla.jsp?id="+String.valueOf(id_batalla));
-            return;
+            bd.masVida(vida);
+            bd.masPtsFuerza(ataque);
+            bd.masPtsFuerza(defensa);
+            bd.menosPremio(mensaje.getAttribute("user_id").toString());
+            
+            response.sendRedirect("/Tarea1/Paginas/p_usuario.jsp");
         } catch (SQLException ex) {
-            Logger.getLogger(nuevaBatalla.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(premiar.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        response.sendRedirect("/Tarea1/Paginas/p_usuario.jsp");
+        
     }
 }
